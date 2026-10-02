@@ -1,604 +1,988 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Apólice Seg</title>
-<meta name="description" content="Corretora de Seguros: Automóvel, Saúde, Vida, Residencial e Empresarial">
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>Apólice Seg · Corretora de Seguros</title>
+<meta name="description" content="Corretora de Seguros em Sorocaba e todo o Brasil: Automóvel, Saúde, Vida, Residencial e Empresarial. Cotação rápida pelo WhatsApp.">
+<meta name="theme-color" content="#1976D2">
+<link rel="icon" type="image/png" href="logo-simbolo-azul.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apólice Seg · Corretora de Seguros">
+<meta property="og:description" content="Cotamos nas melhores seguradoras do Brasil e te apresentamos a opção que cabe no seu bolso.">
+<meta property="og:locale" content="pt_BR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+/* ============================================================
+   APÓLICE SEG — IDENTIDADE VISUAL
+   Azul institucional: #1976D2
+   Navy (texto/rodapé):  #0B1A2E
+   Fundo:                #FFFFFF
+   ============================================================ */
 :root {
-  /* Semantic tokens — light */
-  --bg: #F3F6FA;
-  --bg-card: #FFFFFF;
-  --bg-input: #F3F6FA;
-  --fg: #0B1A2E;
-  --fg-muted: #8B9CB5;
-  --border: #E8EDF4;
-  --hero-bg: #0B1A2E;
-  --hero-bg-mid: #132B4A;
-  --hero-bg-end: #1A3A5C;
-  --hero-fg: #FFFFFF;
-  --hero-fg-muted: #E8EDF4;
-  --footer-bg: #0B1A2E;
-  --footer-fg: #FFFFFF;
-  --footer-fg-muted: #8B9CB5;
-  --green-wa: #25D366;
+  color-scheme: light;
+
+  /* Marca */
+  --brand:        #1976D2;
+  --brand-dark:   #145EA8;
+  --brand-darker: #0F4A86;
+  --brand-tint:   #E9F2FC;
+  --brand-tint-2: #D3E6F9;
+
+  /* Superfícies */
+  --bg:        #FFFFFF;
+  --bg-alt:    #F7FAFD;
+  --bg-card:   #FFFFFF;
+  --bg-input:  #F7FAFD;
+  --bg-wash:   linear-gradient(170deg, #F4F9FE 0%, #EAF3FC 60%, #FFFFFF 100%);
+
+  /* Texto */
+  --fg:        #0B1A2E;
+  --fg-soft:   #3D5068;
+  --fg-muted:  #6B7D94;
+  --on-brand:  #FFFFFF;
+
+  /* Linhas */
+  --border:       #DCE8F4;
+  --border-strong:#C3D8EC;
+
+  /* Apoio */
+  --green-wa:      #25D366;
   --green-wa-dark: #1EBE5A;
-  --green-hover: #20C55E;
-  --amber: #F59E0B;
-  --red-soft: #EF4444;
+  --amber:         #E8A020;
+  --navy:          #0B1A2E;
+  --navy-soft:     #1B3250;
+
+  /* Sombras */
+  --sh-sm: 0 1px 2px rgba(11,26,46,.05);
+  --sh-md: 0 4px 16px rgba(11,26,46,.07);
+  --sh-lg: 0 12px 36px rgba(11,26,46,.10);
+  --sh-brand: 0 6px 20px rgba(25,118,210,.25);
+
   --body-font: 'DM Sans', system-ui, -apple-system, sans-serif;
   --display-font: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0D1117;
-    --bg-card: #161B22;
-    --bg-input: #1C2128;
-    --fg: #E6EDF3;
-    --fg-muted: #8B949E;
-    --border: #30363D;
-    --hero-bg: #0D1117;
-    --hero-bg-mid: #111822;
-    --hero-bg-end: #161F2D;
-    --hero-fg: #F0F6FC;
-    --hero-fg-muted: #C9D1D9;
-    --footer-bg: #0D1117;
-    --footer-fg: #E6EDF3;
-    --footer-fg-muted: #8B949E;
-    --green-wa: #2BD96E;
-    --green-wa-dark: #25C862;
-    --green-hover: #30E676;
-    --amber: #FBBF24;
-    --red-soft: #F87171;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0D1117;
-  --bg-card: #161B22;
-  --bg-input: #1C2128;
-  --fg: #E6EDF3;
-  --fg-muted: #8B949E;
-  --border: #30363D;
-  --hero-bg: #0D1117;
-  --hero-bg-mid: #111822;
-  --hero-bg-end: #161F2D;
-  --hero-fg: #F0F6FC;
-  --hero-fg-muted: #C9D1D9;
-  --footer-bg: #0D1117;
-  --footer-fg: #E6EDF3;
-  --footer-fg-muted: #8B949E;
-  --green-wa: #2BD96E;
-  --green-wa-dark: #25C862;
-  --green-hover: #30E676;
-  --amber: #FBBF24;
-  --red-soft: #F87171;
-  color-scheme: dark;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); }
+
 body {
+  margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--fg);
   font-family: var(--body-font);
-  margin: 0;
-  padding: 0;
+  font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4, h5 { font-family: var(--display-font); color: var(--fg); }
+
+img { max-width: 100%; height: auto; }
+[hidden] { display: none !important; }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--display-font);
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+a { color: var(--brand); }
 
 .section-pad { padding-inline: 16px; }
 .container { max-width: 1140px; margin: 0 auto; }
 
-/* Header */
+/* ====================== HEADER ====================== */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--hero-bg);
-  padding: env(safe-area-inset-top, 0px) 0 0 0;
-  transition: box-shadow .3s;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  padding-top: env(safe-area-inset-top, 0px);
+  transition: border-color .25s, box-shadow .25s;
 }
-.site-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.25); }
-
-/* Hero */
-.hero {
-  background: linear-gradient(165deg, var(--hero-bg) 0%, var(--hero-bg-mid) 55%, var(--hero-bg-end) 100%);
-  padding-top: calc(80px + env(safe-area-inset-top, 0px));
+.site-header.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 14px rgba(11,26,46,.06);
 }
-.hero-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-}
-@media (max-width: 768px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+.header-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  height: 68px; gap: 16px;
 }
 
-/* Sim card */
-.sim-card {
-  background: var(--bg-card); border-radius: 16px; padding: 32px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+/* ====================== LOGO ====================== */
+.brand-lockup {
+  display: inline-flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0;
 }
-.sim-card h3 { color: var(--fg); }
-.sim-card label {
-  display: block; font-size: .8125rem; font-weight: 600;
-  color: var(--fg-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;
+/* O PNG do logo ja traz "Apólice Seg" escrito: a altura manda, a largura se ajusta. */
+.brand-logo { height: 38px; width: auto; display: block; flex-shrink: 0; }
+@media (max-width: 420px) { .brand-logo { height: 31px; } }
+.site-footer .brand-logo { height: 42px; }
+.footer-tagline {
+  font-size: .75rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: #7F97B1; margin: 12px 0 0;
 }
-.sim-card select, .sim-card input {
-  width: 100%; padding: 12px 14px; border: 1.5px solid var(--border);
-  border-radius: 10px; font-family: var(--body-font); font-size: .9375rem;
-  color: var(--fg); background: var(--bg-input); outline: none;
-  transition: border-color .2s; box-sizing: border-box;
+.brand-text {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 1.1875rem;
+  letter-spacing: -.015em;
+  color: var(--navy);
+  white-space: nowrap;
+  line-height: 1;
 }
-.sim-card select:focus, .sim-card input:focus { border-color: var(--green-wa); }
-.sim-card .btn-sim {
-  width: 100%; padding: 14px; border: none; border-radius: 12px;
-  background: var(--green-wa); color: #fff; font-family: var(--display-font);
-  font-size: 1.0625rem; font-weight: 700; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  transition: background .2s, transform .1s;
-}
-.sim-card .btn-sim:hover { background: var(--green-hover); }
-.sim-card .btn-sim:active { transform: scale(.98); }
-
-/* Logo strip */
-.logo-strip {
-  display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center;
-}
-.logo-strip .logo-placeholder {
-  width: 120px; height: 52px; background: var(--bg-card);
-  border: 1.5px dashed var(--border); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .75rem; color: var(--fg-muted); font-weight: 500;
+.brand-text .accent { color: var(--brand); }
+.brand-tagline {
+  display: block;
+  font-family: var(--body-font);
+  font-size: .5625rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-top: 3px;
 }
 
-/* Price cards */
-.price-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;
+/* ====================== NAV ====================== */
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a:not(.nav-cta) {
+  color: var(--fg-soft);
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: 9px 13px;
+  border-radius: 9px;
+  transition: color .18s, background .18s;
+  white-space: nowrap;
 }
-.price-card {
-  background: var(--bg-card); border-radius: 14px; padding: 28px 24px;
-  border: 1.5px solid var(--border); transition: transform .2s, box-shadow .2s;
-  position: relative; overflow: hidden;
+.nav-links a:not(.nav-cta):hover {
+  color: var(--brand);
+  background: var(--brand-tint);
 }
-.price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
-.price-card .card-badge {
-  position: absolute; top: 0; right: 0; background: var(--green-wa); color: #fff;
-  font-size: .6875rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .06em; padding: 6px 14px; border-radius: 0 14px 0 12px;
-}
-.price-card .card-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; margin-bottom: 16px;
-}
-.price-card .card-title {
-  font-family: var(--display-font); font-size: 1.125rem; font-weight: 700;
-  color: var(--fg); margin-bottom: 4px;
-}
-.price-card .card-desc {
-  font-size: .8125rem; color: var(--fg-muted); line-height: 1.5; margin-bottom: 16px;
-}
-.price-card .card-price {
-  font-family: var(--display-font); font-weight: 800; font-size: 1.5rem; color: var(--fg);
-}
-.price-card .card-price span { font-size: .8125rem; font-weight: 500; color: var(--fg-muted); }
-
-/* Team */
-.team-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;
-}
-.team-card {
-  background: var(--bg-card); border-radius: 14px; padding: 24px;
-  text-align: center; border: 1.5px solid var(--border);
-}
-.team-avatar {
-  width: 80px; height: 80px; border-radius: 50%; background: var(--bg);
-  margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;
-  font-size: 2rem; color: var(--fg-muted); overflow: hidden;
-}
-.team-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Differentials */
-.diff-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;
-}
-.diff-card {
-  display: flex; gap: 16px; align-items: flex-start;
-  background: var(--bg-card); border-radius: 14px; padding: 24px; border: 1.5px solid var(--border);
-}
-.diff-icon {
-  flex-shrink: 0; width: 44px; height: 44px; border-radius: 11px;
-  display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
-}
-
-/* Testimonials */
-.test-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
-}
-.test-card {
-  background: var(--bg-card); border-radius: 14px; padding: 28px 24px;
-  border: 1.5px solid var(--border);
-}
-.test-stars { color: var(--amber); letter-spacing: 2px; margin-bottom: 12px; }
-.test-quote { font-style: italic; color: var(--fg); line-height: 1.6; margin-bottom: 16px; font-size: .9375rem; }
-.test-author { font-weight: 600; font-size: .8125rem; color: var(--fg-muted); }
-
-/* FAQ */
-.faq-item { background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
-.faq-q {
-  width: 100%; padding: 18px 20px; border: none; background: transparent;
-  font-family: var(--display-font); font-size: 1rem; font-weight: 600;
-  color: var(--fg); text-align: left; cursor: pointer;
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-}
-.faq-q:hover { background: var(--bg); }
-.faq-q .chevron { transition: transform .25s; flex-shrink: 0; color: var(--fg-muted); }
-.faq-item.open .faq-q .chevron { transform: rotate(180deg); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-.faq-a-inner { padding: 0 20px 18px; font-size: .9375rem; color: var(--fg-muted); line-height: 1.6; }
-
-/* Footer */
-.site-footer { background: var(--footer-bg); color: var(--footer-fg); }
-
-/* Floating WA */
-.wa-float {
-  position: fixed; bottom: 24px; right: 24px; z-index: 90;
-  width: 60px; height: 60px; border-radius: 50%; background: var(--green-wa);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(37,211,102,.4); cursor: pointer; border: none;
-  animation: waPulse 2s infinite; text-decoration: none;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-.wa-float svg { width: 32px; height: 32px; fill: #fff; }
-@keyframes waPulse {
-  0%,100% { box-shadow: 0 4px 16px rgba(37,211,102,.4); }
-  50% { box-shadow: 0 4px 28px rgba(37,211,102,.65); }
-}
-
-/* Section titles */
-.sec-eyebrow {
-  font-family: var(--display-font); font-size: .75rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em; color: var(--green-wa-dark); margin-bottom: 8px;
-}
-.sec-title {
-  font-family: var(--display-font); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800;
-  color: var(--fg); line-height: 1.2; text-wrap: balance; margin-bottom: 8px;
-}
-.sec-sub { font-size: .9375rem; color: var(--fg-muted); max-width: 540px; line-height: 1.6; }
-
-/* Nav */
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a {
-  color: var(--hero-fg-muted); text-decoration: none; font-size: .875rem;
-  font-weight: 500; opacity: .8; transition: opacity .2s;
-}
-.nav-links a:hover { opacity: 1; }
 .nav-cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--green-wa) !important; color: #fff !important;
-  padding: 10px 20px; border-radius: 10px; font-weight: 600 !important;
-  opacity: 1 !important; transition: background .2s !important;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--brand);
+  color: var(--on-brand);
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-family: var(--display-font);
+  font-weight: 700;
+  font-size: .875rem;
+  margin-left: 10px;
+  box-shadow: var(--sh-brand);
+  transition: background .18s, transform .12s, box-shadow .18s;
+  white-space: nowrap;
 }
-.nav-cta:hover { background: var(--green-hover) !important; }
+.nav-cta:hover { background: var(--brand-dark); box-shadow: 0 8px 24px rgba(25,118,210,.33); }
+.nav-cta:active { transform: translateY(1px); }
 
-.burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-.burger span {
-  display: block; width: 24px; height: 2px; background: var(--hero-fg-muted);
-  margin: 5px 0; border-radius: 2px; transition: .3s;
+.burger {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 8px; border-radius: 8px; transition: background .18s;
 }
-@media (max-width: 768px) {
+.burger:hover { background: var(--brand-tint); }
+.burger span {
+  display: block; width: 22px; height: 2px; background: var(--navy);
+  margin: 5px 0; border-radius: 2px; transition: .28s;
+}
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
   .burger { display: block; }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--hero-bg-mid); flex-direction: column; padding: 20px; gap: 16px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--sh-lg);
+    flex-direction: column; align-items: stretch;
+    padding: 14px 16px 20px; gap: 4px;
   }
   .nav-links.open { display: flex; }
+  .nav-links a:not(.nav-cta) { padding: 13px 14px; font-size: .9375rem; }
+  .nav-cta { margin-left: 0; margin-top: 8px; justify-content: center; padding: 14px 20px; font-size: .9375rem; }
+}
+
+/* ====================== HERO ====================== */
+.hero {
+  background: var(--bg-wash);
+  padding-top: calc(68px + env(safe-area-inset-top, 0px));
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -140px; right: -140px;
+  width: 460px; height: 460px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(25,118,210,.13) 0%, rgba(25,118,210,0) 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--display-font);
+  font-size: .75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--brand-darker);
+  background: var(--bg-card);
+  border: 1px solid var(--brand-tint-2);
+  padding: 7px 14px; border-radius: 100px;
+  margin: 0 0 20px;
+  box-shadow: var(--sh-sm);
+}
+.hero h1 {
+  font-weight: 800;
+  font-size: clamp(2.0625rem, 5.2vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  margin: 0 0 20px;
+  color: var(--navy);
+}
+.hero h1 em { font-style: normal; color: var(--brand); }
+.hero-sub {
+  color: var(--fg-soft);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 470px;
+  margin: 0 0 30px;
+}
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .8125rem; font-weight: 600; color: var(--fg-soft);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 8px 14px; border-radius: 100px;
+}
+.hero-badge svg { color: var(--brand); flex-shrink: 0; }
+
+/* ====================== SIMULADOR ====================== */
+.sim-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-lg);
+  position: relative;
+  overflow: hidden;
+}
+.sim-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--brand) 0%, #42A0F0 100%);
+}
+.sim-card h3 {
+  font-weight: 700; font-size: 1.3125rem;
+  margin: 6px 0 4px; letter-spacing: -.015em;
+}
+.sim-card .sim-note { font-size: .8125rem; color: var(--fg-muted); margin: 0 0 22px; }
+.sim-card label {
+  display: block; font-size: .6875rem; font-weight: 700;
+  color: var(--fg-muted); text-transform: uppercase;
+  letter-spacing: .08em; margin-bottom: 7px;
+}
+.sim-card select, .sim-card input {
+  width: 100%; padding: 13px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 10px;
+  font-family: var(--body-font); font-size: .9375rem;
+  color: var(--fg); background: var(--bg-input);
+  outline: none;
+  transition: border-color .18s, box-shadow .18s, background .18s;
+}
+.sim-card select:focus, .sim-card input:focus {
+  border-color: var(--brand);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(25,118,210,.14);
+}
+.sim-card input::placeholder { color: #9AAABD; }
+.btn-primary {
+  width: 100%; padding: 15px; border: none; border-radius: 12px;
+  background: var(--brand); color: var(--on-brand);
+  font-family: var(--display-font); font-size: 1.0625rem; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  box-shadow: var(--sh-brand);
+  transition: background .18s, transform .12s, box-shadow .18s;
+}
+.btn-primary:hover { background: var(--brand-dark); box-shadow: 0 10px 28px rgba(25,118,210,.32); }
+.btn-primary:active { transform: translateY(1px); }
+.sim-legal {
+  font-size: .6875rem; color: var(--fg-muted);
+  text-align: center; margin: 14px 0 0; line-height: 1.5;
+}
+
+/* ====================== SEÇÕES ====================== */
+.sec-alt { background: var(--bg-alt); border-block: 1px solid var(--border); }
+
+.sec-head { text-align: center; margin-bottom: 42px; }
+.sec-eyebrow {
+  font-family: var(--display-font); font-size: .75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--brand); margin: 0 0 10px;
+}
+.sec-title {
+  font-size: clamp(1.625rem, 4vw, 2.125rem); font-weight: 800;
+  line-height: 1.18; letter-spacing: -.022em; margin: 0 0 12px;
+  color: var(--navy);
+}
+.sec-sub {
+  font-size: .9375rem; color: var(--fg-soft);
+  max-width: 560px; line-height: 1.65; margin: 0 auto;
+}
+
+/* ====================== SEGURADORAS ====================== */
+/* Grid de 4 colunas: 8 seguradoras preenchem 2 linhas exatas.
+   Em telas estreitas vira 2 colunas = 4 linhas exatas.
+   Nunca sobra um item sozinho numa linha. */
+.logo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 880px; margin: 0 auto;
+}
+@media (max-width: 620px) { .logo-strip { grid-template-columns: repeat(2, 1fr); } }
+.logo-chip {
+  height: 54px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8125rem; font-weight: 600; color: var(--fg-muted);
+  padding-inline: 16px;
+  box-shadow: var(--sh-sm);
+  transition: border-color .2s, transform .2s;
+}
+.logo-chip:hover { border-color: var(--brand-tint-2); transform: translateY(-2px); }
+.logo-chip img { max-height: 32px; width: auto; }
+
+/* ====================== PRODUTOS ====================== */
+.price-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 20px;
+}
+.price-card {
+  background: var(--bg-card); border-radius: 16px; padding: 28px 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-sm);
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sh-lg);
+  border-color: var(--brand-tint-2);
+}
+.price-card.featured { border-color: var(--brand); border-width: 1.5px; }
+.card-badge {
+  position: absolute; top: 0; right: 0;
+  background: var(--brand); color: var(--on-brand);
+  font-family: var(--display-font);
+  font-size: .625rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; padding: 6px 14px; border-radius: 0 16px 0 12px;
+}
+.card-icon {
+  width: 50px; height: 50px; border-radius: 13px;
+  background: var(--brand-tint);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; flex-shrink: 0;
+}
+.card-icon svg { color: var(--brand); }
+.card-title {
+  font-family: var(--display-font); font-size: 1.0625rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px; line-height: 1.3;
+}
+.card-desc {
+  font-size: .8125rem; color: var(--fg-muted); line-height: 1.55;
+  margin-bottom: 18px; flex-grow: 1;
+}
+.card-price {
+  font-family: var(--display-font); font-weight: 800; font-size: 1.625rem;
+  color: var(--brand); letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.card-price span { font-size: .8125rem; font-weight: 500; color: var(--fg-muted); letter-spacing: 0; }
+.card-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 14px; font-size: .8125rem; font-weight: 700;
+  color: var(--brand); text-decoration: none;
+  font-family: var(--display-font);
+  transition: gap .18s, color .18s;
+}
+.card-link:hover { gap: 9px; color: var(--brand-dark); }
+
+/* ====================== DIFERENCIAIS ====================== */
+.diff-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(262px, 1fr)); gap: 20px;
+}
+.diff-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--bg-card); border-radius: 15px; padding: 25px;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-sm);
+  transition: border-color .2s, box-shadow .2s;
+}
+.diff-card:hover { border-color: var(--brand-tint-2); box-shadow: var(--sh-md); }
+.diff-icon {
+  flex-shrink: 0; width: 46px; height: 46px; border-radius: 12px;
+  background: var(--brand-tint);
+  display: flex; align-items: center; justify-content: center;
+}
+.diff-icon svg { color: var(--brand); }
+.diff-card h4 {
+  font-weight: 700; font-size: 1rem; margin: 2px 0 5px;
+  color: var(--navy); line-height: 1.3;
+}
+.diff-card p { font-size: .875rem; color: var(--fg-muted); line-height: 1.55; margin: 0; }
+
+/* ====================== EQUIPE ====================== */
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px; max-width: 620px; margin: 0 auto;
+}
+.team-card {
+  background: var(--bg-card); border-radius: 16px; padding: 28px 24px;
+  text-align: center; border: 1px solid var(--border);
+  box-shadow: var(--sh-sm);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.team-card:hover { border-color: var(--brand-tint-2); box-shadow: var(--sh-md); transform: translateY(-3px); }
+.team-avatar {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--brand-tint);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--brand-tint-2);
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.team-avatar svg { color: var(--brand); }
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h4 { font-weight: 700; font-size: 1.0625rem; margin: 0 0 3px; color: var(--navy); }
+.team-role { font-size: .8125rem; color: var(--brand); font-weight: 600; margin: 0 0 14px; }
+.team-wa {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .8125rem; font-weight: 700; color: var(--brand);
+  text-decoration: none; font-family: var(--display-font);
+  padding: 8px 16px; border-radius: 9px;
+  border: 1.5px solid var(--brand-tint-2);
+  transition: background .18s, border-color .18s;
+}
+.team-wa:hover { background: var(--brand-tint); border-color: var(--brand); }
+
+/* ====================== DEPOIMENTOS ====================== */
+.test-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px;
+}
+.test-card {
+  background: var(--bg-card); border-radius: 16px; padding: 28px 26px;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-sm);
+  position: relative;
+}
+.test-card::before {
+  content: '"';
+  position: absolute; top: 14px; right: 22px;
+  font-family: var(--display-font); font-size: 4rem; font-weight: 800;
+  color: var(--brand-tint); line-height: 1; pointer-events: none;
+}
+.test-stars { color: var(--amber); letter-spacing: 3px; margin-bottom: 14px; font-size: .9375rem; }
+.test-quote {
+  font-style: italic; color: var(--fg-soft); line-height: 1.65;
+  margin: 0 0 18px; font-size: .9375rem; position: relative;
+}
+.test-author {
+  font-family: var(--display-font); font-weight: 700;
+  font-size: .8125rem; color: var(--navy); margin: 0;
+}
+.test-author span { font-weight: 500; color: var(--fg-muted); }
+
+/* ====================== FAQ ====================== */
+.faq-wrap { max-width: 740px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 13px; overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.faq-item.open { border-color: var(--brand); box-shadow: var(--sh-md); }
+.faq-q {
+  width: 100%; padding: 19px 22px; border: none; background: transparent;
+  font-family: var(--display-font); font-size: 1rem; font-weight: 600;
+  color: var(--navy); text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  transition: color .18s;
+}
+.faq-q:hover { color: var(--brand); }
+.faq-item.open .faq-q { color: var(--brand); }
+.faq-q .chevron { transition: transform .26s; flex-shrink: 0; color: var(--brand); }
+.faq-item.open .faq-q .chevron { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.faq-a-inner {
+  padding: 0 22px 20px; font-size: .9375rem;
+  color: var(--fg-soft); line-height: 1.68;
+}
+
+/* ====================== CTA FINAL ====================== */
+.cta-final {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 55%, #24456B 100%);
+  position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute; bottom: -180px; left: 50%;
+  transform: translateX(-50%);
+  width: 620px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(25,118,210,.38) 0%, rgba(25,118,210,0) 70%);
+  pointer-events: none;
+}
+.cta-final h2 {
+  font-weight: 800; font-size: clamp(1.625rem, 4.2vw, 2.375rem);
+  color: #FFFFFF; margin: 0 0 14px; letter-spacing: -.022em; line-height: 1.16;
+}
+.cta-final p {
+  color: #C5D6E8; font-size: 1.0625rem; margin: 0 auto 32px;
+  max-width: 480px; line-height: 1.6;
+}
+.btn-cta-light {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #FFFFFF; color: var(--brand); text-decoration: none;
+  padding: 17px 38px; border-radius: 14px;
+  font-family: var(--display-font); font-weight: 700; font-size: 1.0625rem;
+  box-shadow: 0 10px 34px rgba(0,0,0,.26);
+  transition: transform .16s, box-shadow .16s, color .16s;
+}
+.btn-cta-light:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,.32); color: var(--brand-dark); }
+.btn-cta-light:active { transform: translateY(0); }
+.cta-phone {
+  display: block; margin-top: 20px; color: #9FB8D1;
+  font-size: .875rem; text-decoration: none;
+}
+.cta-phone strong { color: #FFFFFF; }
+
+/* ====================== FOOTER ====================== */
+.site-footer { background: var(--navy); color: #FFFFFF; }
+.footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 36px; margin-bottom: 32px;
+}
+@media (max-width: 820px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; gap: 26px; } }
+.site-footer .brand-text { color: #FFFFFF; }
+.site-footer .brand-text .accent { color: #5FADEE; }
+.site-footer .brand-tagline { color: #7F97B1; }
+.footer-about {
+  font-size: .8125rem; color: #A8BCD1; line-height: 1.7;
+  margin: 16px 0 0; max-width: 270px;
+}
+.footer-col h5 {
+  font-family: var(--body-font);
+  font-size: .6875rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: #7F97B1; margin: 0 0 14px;
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: .8125rem; color: #CFDEEC; text-decoration: none;
+  transition: color .18s;
+}
+.footer-col a:hover { color: #FFFFFF; text-decoration: underline; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 22px;
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: .75rem; color: #7F97B1; margin: 0; }
+/* Afasta o texto do balao flutuante do WhatsApp */
+.footer-bottom p:last-child { padding-right: 70px; }
+@media (max-width: 680px) {
+  .footer-bottom { justify-content: flex-start; }
+  .footer-bottom p:last-child { padding-right: 0; }
+  .footer-bottom { padding-bottom: 56px; }
+}
+
+/* ====================== WHATSAPP FLUTUANTE ====================== */
+.wa-float {
+  position: fixed; right: 20px; z-index: 90;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--green-wa);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 18px rgba(37,211,102,.45);
+  text-decoration: none; border: none;
+  animation: waPulse 2.4s infinite;
+  transition: transform .18s;
+}
+.wa-float:hover { transform: scale(1.07); }
+.wa-float svg { width: 31px; height: 31px; fill: #FFFFFF; }
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,.45); }
+  50%     { box-shadow: 0 4px 30px rgba(37,211,102,.68); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .wa-float { animation: none; }
-  * { transition-duration: 0s !important; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
 }
 </style>
+</head>
+<body>
 
-<!-- ========== HEADER ========== -->
+<!-- ==================== HEADER ==================== -->
 <header class="site-header" id="header">
-  <div class="container section-pad" style="display:flex; justify-content:space-between; align-items:center; height:64px;">
-    <!-- EDITÁVEL: Substitua por <img> com seu logo -->
-    <a href="#inicio" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
-      <div style="width:36px;height:36px;border-radius:10px;background:var(--green-wa);display:flex;align-items:center;justify-content:center;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <div class="container section-pad header-inner">
+
+    <!-- ============================================================
+         LOGO DO HEADER (fundo branco) — "A" azul + texto marinho.
+         Arquivo:  logo-apolice-seg.png   (na raiz do repositorio)
+         Se o arquivo faltar, aparece o nome escrito no lugar — nunca quebra.
+         ============================================================ -->
+    <a href="#inicio" class="brand-lockup" aria-label="Apólice Seg — página inicial">
+      <img src="logo-apolice-seg.png" alt="Apólice Seg" class="brand-logo"
+           width="550" height="200"
+           onerror="this.hidden=true;document.getElementById('bf1').hidden=false">
+      <div id="bf1" hidden>
+        <span class="brand-text">Apólice <span class="accent">Seg</span></span>
+        <span class="brand-tagline">Seguros &amp; Planos de Saúde</span>
       </div>
-      <span style="font-family:var(--display-font);font-weight:800;font-size:1.25rem;color:var(--hero-fg);">Apólice Seg</span>
     </a>
 
-    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#produtos">Produtos</a>
       <a href="#diferenciais">Diferenciais</a>
+      <a href="#equipe">Equipe</a>
       <a href="#depoimentos">Clientes</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://wa.me/5515991157175?text=Ol%C3%A1%2C%20quero%20cotar%20meu%20seguro!" class="nav-cta" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.857L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.87 0-3.654-.5-5.22-1.442l-.374-.222-3.878 1.014 1.035-3.782-.244-.387A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/></svg>
-        WhatsApp
+      <a href="#faq">Dúvidas</a>
+      <a href="#simulador" class="nav-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Cotar agora
       </a>
     </nav>
   </div>
 </header>
 
-<!-- ========== HERO ========== -->
+<!-- ==================== HERO ==================== -->
 <section class="hero" id="inicio">
-  <div class="container section-pad" style="padding-block:64px 72px;">
+  <div class="container section-pad" style="padding-block:66px 76px;">
     <div class="hero-grid">
       <div>
-        <!-- EDITÁVEL: Altere aqui o título e subtítulo do Hero -->
-        <p style="font-family:var(--display-font);font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--green-wa);margin-bottom:12px;">Corretora de Seguros</p>
-        <h1 style="font-family:var(--display-font);font-weight:800;font-size:clamp(2rem,5vw,2.75rem);color:var(--hero-fg);line-height:1.15;margin:0 0 20px;text-wrap:balance;">
-          Proteção sob medida,<br>sem burocracia
-        </h1>
-        <p style="color:var(--hero-fg-muted);opacity:.85;font-size:1.0625rem;line-height:1.6;max-width:460px;margin-bottom:32px;">
-          A gente cota nas melhores seguradoras do Brasil e te apresenta a opção que faz sentido pro seu bolso e pro seu momento.
+        <p class="hero-eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5 4.8 1.3 6.8L12 17.5 5.9 20.7 7.2 13.9l-5-4.8 6.9-.8L12 2z"/></svg>
+          Corretora de Seguros
         </p>
-        <div style="display:flex;flex-wrap:wrap;gap:24px;color:var(--hero-fg-muted);font-size:.8125rem;opacity:.7;">
-          <span>✓ Atendimento humanizado</span>
-          <span>✓ +15 seguradoras</span>
-          <span>✓ Todo o Brasil</span>
+        <h1>Proteção sob medida,<br><em>sem burocracia</em></h1>
+        <p class="hero-sub">
+          A gente cota nas melhores seguradoras do Brasil e te apresenta a opção
+          que faz sentido pro seu bolso e pro seu momento.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Atendimento humanizado
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            +15 seguradoras
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Todo o Brasil
+          </span>
         </div>
       </div>
 
-      <!-- SIMULADOR DE COTAÇÃO -->
+      <!-- SIMULADOR -->
       <div class="sim-card" id="simulador">
-        <h3 style="font-family:var(--display-font);font-weight:700;font-size:1.25rem;margin:0 0 4px;">Simulação Rápida</h3>
-        <p style="font-size:.8125rem;color:var(--fg-muted);margin:0 0 20px;">Receba uma cotação pelo WhatsApp em minutos</p>
+        <h3>Simulação rápida</h3>
+        <p class="sim-note">Receba sua cotação pelo WhatsApp em minutos.</p>
 
-        <form id="simForm" onsubmit="return enviarSimulacao(event)" style="display:flex;flex-direction:column;gap:14px;">
+        <form id="simForm" style="display:flex;flex-direction:column;gap:15px;">
           <div>
-            <label for="simProduto">Tipo de Seguro</label>
+            <label for="simProduto">Tipo de seguro</label>
             <select id="simProduto" required>
               <option value="">Selecione...</option>
-              <option value="Automóvel">🚗 Seguro de Automóvel</option>
-              <option value="Saúde PME">🏥 Plano de Saúde PME</option>
-              <option value="Saúde Individual">🏥 Plano de Saúde Individual</option>
-              <option value="Residencial">🏠 Seguro Residencial</option>
-              <option value="Vida">💚 Seguro de Vida</option>
-              <option value="Empresarial">🏢 Seguro Empresarial</option>
-              <option value="Frotas">🚛 Seguro de Frotas</option>
+              <option value="Automóvel">Seguro de Automóvel</option>
+              <option value="Saúde PME">Plano de Saúde PME</option>
+              <option value="Saúde Individual">Plano de Saúde Individual</option>
+              <option value="Residencial">Seguro Residencial</option>
+              <option value="Vida">Seguro de Vida</option>
+              <option value="Empresarial">Seguro Empresarial</option>
+              <option value="Frotas">Seguro de Frotas</option>
             </select>
           </div>
           <div>
             <label for="simNome">Seu nome</label>
-            <input type="text" id="simNome" placeholder="Ex: Maria Silva" required>
+            <input type="text" id="simNome" placeholder="Ex: Maria Silva" autocomplete="name" required>
           </div>
           <div>
             <label for="simCidade">Cidade</label>
-            <input type="text" id="simCidade" placeholder="Ex: Sorocaba" required>
+            <input type="text" id="simCidade" placeholder="Ex: Sorocaba" autocomplete="address-level2" required>
           </div>
-          <button type="submit" class="btn-sim">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.857L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.22-1.442l-.374-.222-3.878 1.014 1.035-3.782-.244-.387A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/></svg>
-            Cotar pelo WhatsApp
+          <button type="submit" class="btn-primary">
+            Receber minha cotação
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
+          <p class="sim-legal">Abre uma conversa no WhatsApp com seus dados já preenchidos. Sem compromisso.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SEGURADORAS ========== -->
-<!-- EDITÁVEL: Substitua cada .logo-placeholder por <img src="logo.png" alt="Nome" style="height:40px;width:auto;"> -->
-<section style="background:var(--bg-card);padding-block:40px;" id="seguradoras">
+<!-- ==================== SEGURADORAS ==================== -->
+<section class="sec-alt" style="padding-block:44px;" id="seguradoras">
   <div class="container section-pad">
-    <p style="text-align:center;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:20px;">Seguradoras disponíveis para cotação</p>
+    <p style="text-align:center;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--fg-muted);margin:0 0 22px;">
+      Seguradoras parceiras para cotação
+    </p>
     <div class="logo-strip">
-      <!-- EDITÁVEL: Coloque aqui os logos das seguradoras. Me passe a lista completa para atualizar. -->
-      <div class="logo-placeholder">Seguradora 1</div>
-      <div class="logo-placeholder">Seguradora 2</div>
-      <div class="logo-placeholder">Seguradora 3</div>
-      <div class="logo-placeholder">Seguradora 4</div>
-      <div class="logo-placeholder">Seguradora 5</div>
-      <div class="logo-placeholder">Seguradora 6</div>
-      <div class="logo-placeholder">Seguradora 7</div>
-      <div class="logo-placeholder">Seguradora 8</div>
+      <!-- EDITÁVEL: troque o texto por <img src="seguradora.png" alt="Nome"> -->
+      <div class="logo-chip">Seguradora 1</div>
+      <div class="logo-chip">Seguradora 2</div>
+      <div class="logo-chip">Seguradora 3</div>
+      <div class="logo-chip">Seguradora 4</div>
+      <div class="logo-chip">Seguradora 5</div>
+      <div class="logo-chip">Seguradora 6</div>
+      <div class="logo-chip">Seguradora 7</div>
+      <div class="logo-chip">Seguradora 8</div>
     </div>
   </div>
 </section>
 
-<!-- ========== PRODUTOS / PREÇOS ========== -->
-<!-- EDITÁVEL: Altere os valores conforme a 3ª menor parcela média de cada produto -->
-<section style="padding-block:72px 64px;" id="produtos">
+<!-- ==================== PRODUTOS ==================== -->
+<section style="padding-block:76px 68px;" id="produtos">
   <div class="container section-pad">
-    <div style="text-align:center;margin-bottom:40px;">
-      <p class="sec-eyebrow">Nossos Produtos</p>
+    <div class="sec-head">
+      <p class="sec-eyebrow">Nossos produtos</p>
       <h2 class="sec-title">Quanto custa, na prática?</h2>
-      <p class="sec-sub" style="margin-inline:auto;">Valores reais que clientes nossos já pagaram. O seu depende do perfil. Manda um oi no WhatsApp que a gente cota rápido.</p>
+      <p class="sec-sub">Valores que clientes nossos já pagaram. O seu depende do perfil — manda um oi que a gente cota rápido.</p>
     </div>
 
     <div class="price-grid">
-      <!-- EDITÁVEL: Ajuste preços para a 3ª menor parcela média real -->
-      <div class="price-card">
-        <span class="card-badge">Popular</span>
-        <div class="card-icon" style="background:rgba(37,211,102,.1);color:var(--green-wa);">🚗</div>
-        <div class="card-title">Seu Primeiro Carro ou Moto</div>
-        <div class="card-desc">Parcela acessível, cobertura essencial. Cotação rápida pelo WhatsApp.</div>
-        <!-- EDITÁVEL: 3ª menor parcela média -->
-        <div class="card-price">R$ 89<span>/mês*</span></div>
+      <div class="price-card featured">
+        <span class="card-badge">Mais procurado</span>
+        <div class="card-icon">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
+        </div>
+        <div class="card-title">Primeiro carro ou moto</div>
+        <div class="card-desc">Parcela acessível com cobertura essencial. Ideal pra quem está começando.</div>
+        <div class="card-price">R$&nbsp;89<span>/mês*</span></div>
+        <a href="#simulador" class="card-link">Cotar este
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <div class="price-card">
-        <div class="card-icon" style="background:rgba(37,211,102,.06);color:var(--green-wa-dark);">🚙</div>
-        <div class="card-title">Seguro de Automóvel Completo</div>
-        <div class="card-desc">Guincho 24h, carro reserva e proteção contra terceiros.</div>
-        <!-- EDITÁVEL: 3ª menor parcela média -->
-        <div class="card-price">R$ 149<span>/mês*</span></div>
+        <div class="card-icon">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="card-title">Automóvel completo</div>
+        <div class="card-desc">Guincho 24h, carro reserva e proteção contra terceiros inclusos.</div>
+        <div class="card-price">R$&nbsp;149<span>/mês*</span></div>
+        <a href="#simulador" class="card-link">Cotar este
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <div class="price-card">
-        <div class="card-icon" style="background:rgba(245,158,11,.1);color:var(--amber);">🏠</div>
+        <div class="card-icon">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>
+        </div>
         <div class="card-title">Residencial</div>
         <div class="card-desc">Incêndio, roubo, danos elétricos e assistência de encanador e eletricista.</div>
-        <!-- EDITÁVEL: 3ª menor parcela média -->
-        <div class="card-price">R$ 29<span>/mês*</span></div>
+        <div class="card-price">R$&nbsp;29<span>/mês*</span></div>
+        <a href="#simulador" class="card-link">Cotar este
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <div class="price-card">
         <span class="card-badge">Empresas</span>
-        <div class="card-icon" style="background:rgba(239,68,68,.08);color:var(--red-soft);">🏥</div>
+        <div class="card-icon">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5c2-2.7 6.5-2.3 7.8.9 1.2 3-1 6.1-7.8 11.1-6.8-5-9-8.1-7.8-11.1 1.3-3.2 5.8-3.6 7.8-.9z"/><path d="M12 8.6v4M10 10.6h4"/></svg>
+        </div>
         <div class="card-title">Saúde PME</div>
         <div class="card-desc">Planos empresariais a partir de 2 vidas. Custo menor, cobertura de verdade.</div>
-        <!-- EDITÁVEL: 3ª menor parcela média -->
-        <div class="card-price">R$ 199<span>/vida/mês*</span></div>
+        <div class="card-price">R$&nbsp;199<span>/vida/mês*</span></div>
+        <a href="#simulador" class="card-link">Cotar este
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
-    <p style="text-align:center;font-size:.75rem;color:var(--fg-muted);margin-top:16px;">*Valores que clientes já conseguiram. A cotação exata depende do seu perfil.</p>
+
+    <p style="text-align:center;font-size:.75rem;color:var(--fg-muted);margin-top:22px;">
+      *Valores que clientes já conseguiram. A cotação exata depende do seu perfil.
+    </p>
   </div>
 </section>
 
-<!-- ========== DIFERENCIAIS ========== -->
-<!-- EDITÁVEL: Me passe os diferenciais reais para atualizar esta seção -->
-<section style="background:var(--bg-card);padding-block:64px;" id="diferenciais">
+<!-- ==================== DIFERENCIAIS ==================== -->
+<section class="sec-alt" style="padding-block:68px;" id="diferenciais">
   <div class="container section-pad">
-    <div style="text-align:center;margin-bottom:40px;">
+    <div class="sec-head">
       <p class="sec-eyebrow">Por que a Apólice Seg?</p>
       <h2 class="sec-title">Na hora H, faz diferença ter quem resolve</h2>
     </div>
     <div class="diff-grid">
       <div class="diff-card">
-        <div class="diff-icon" style="background:rgba(37,211,102,.1);color:var(--green-wa);">🕐</div>
+        <div class="diff-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </div>
         <div>
-          <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 4px;">Atendimento 24h</h4>
-          <p style="font-size:.875rem;color:var(--fg-muted);line-height:1.5;margin:0;">Suporte real a qualquer hora, em qualquer lugar do Brasil.</p>
+          <h4>Atendimento 24h</h4>
+          <p>Suporte real a qualquer hora, em qualquer lugar do Brasil.</p>
         </div>
       </div>
       <div class="diff-card">
-        <div class="diff-icon" style="background:rgba(37,211,102,.06);color:var(--green-wa-dark);">🔍</div>
+        <div class="diff-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
         <div>
-          <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 4px;">Comparativo entre seguradoras</h4>
-          <p style="font-size:.875rem;color:var(--fg-muted);line-height:1.5;margin:0;">Cotamos em várias seguradoras e te mostramos o melhor custo-benefício.</p>
+          <h4>Comparativo entre seguradoras</h4>
+          <p>Cotamos em várias seguradoras e te mostramos o melhor custo-benefício.</p>
         </div>
       </div>
       <div class="diff-card">
-        <div class="diff-icon" style="background:rgba(245,158,11,.1);color:var(--amber);">📋</div>
+        <div class="diff-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3H9z"/><path d="M15 4.5h3a1 1 0 011 1V20a1 1 0 01-1 1H6a1 1 0 01-1-1V5.5a1 1 0 011-1h3"/><path d="M9 13l2 2 4-4"/></svg>
+        </div>
         <div>
-          <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 4px;">Suporte em Sinistros</h4>
-          <p style="font-size:.875rem;color:var(--fg-muted);line-height:1.5;margin:0;">Se precisar usar o seguro, a gente cuida de todo o processo por você.</p>
+          <h4>Suporte em sinistros</h4>
+          <p>Se precisar usar o seguro, a gente cuida de todo o processo por você.</p>
         </div>
       </div>
       <div class="diff-card">
-        <div class="diff-icon" style="background:rgba(239,68,68,.08);color:var(--red-soft);">💬</div>
+        <div class="diff-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8A8.5 8.5 0 0112.5 20a8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 014 11.5 8.5 8.5 0 018.7 3.9 8.4 8.4 0 0112.5 3h.5a8.5 8.5 0 018 8v.5z"/></svg>
+        </div>
         <div>
-          <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 4px;">WhatsApp direto com corretor</h4>
-          <p style="font-size:.875rem;color:var(--fg-muted);line-height:1.5;margin:0;">Nada de robô. Você fala com quem entende e resolve.</p>
+          <h4>WhatsApp direto com corretor</h4>
+          <p>Nada de robô. Você fala com quem entende e resolve.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== EQUIPE ========== -->
-<!-- EDITÁVEL: Adicione fotos reais dos corretores -->
-<section style="padding-block:64px;" id="equipe">
+<!-- ==================== EQUIPE ==================== -->
+<section style="padding-block:68px;" id="equipe">
   <div class="container section-pad">
-    <div style="text-align:center;margin-bottom:40px;">
-      <p class="sec-eyebrow">Quem Cuida de Você</p>
+    <div class="sec-head">
+      <p class="sec-eyebrow">Quem cuida de você</p>
       <h2 class="sec-title">Seus corretores</h2>
-      <p class="sec-sub" style="margin-inline:auto;">Profissionais certificados, prontos para encontrar a proteção certa pra você.</p>
+      <p class="sec-sub">Profissionais certificados, prontos para encontrar a proteção certa pra você.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
         <div class="team-avatar">
           <!-- EDITÁVEL: <img src="luciana.jpg" alt="Luciana Ribeiro"> -->
-          👤
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0115 0"/></svg>
         </div>
-        <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 2px;">Luciana Ribeiro</h4>
-        <p style="font-size:.8125rem;color:var(--fg-muted);margin:0;">Corretora de Seguros</p>
+        <h4>Luciana Ribeiro</h4>
+        <p class="team-role">Corretora de Seguros</p>
+        <a href="https://wa.me/5515991157175?text=Ol%C3%A1%20Luciana!%20Vim%20pelo%20site%20da%20Ap%C3%B3lice%20Seg." target="_blank" rel="noopener" class="team-wa">Falar com Luciana</a>
       </div>
       <div class="team-card">
         <div class="team-avatar">
           <!-- EDITÁVEL: <img src="pedro.jpg" alt="Pedro Henrique"> -->
-          👤
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0115 0"/></svg>
         </div>
-        <h4 style="font-family:var(--display-font);font-weight:700;font-size:1rem;margin:0 0 2px;">Pedro Henrique</h4>
-        <p style="font-size:.8125rem;color:var(--fg-muted);margin:0;">Corretor de Seguros</p>
+        <h4>Pedro Henrique</h4>
+        <p class="team-role">Corretor de Seguros</p>
+        <a href="https://wa.me/5515991157175?text=Ol%C3%A1%20Pedro!%20Vim%20pelo%20site%20da%20Ap%C3%B3lice%20Seg." target="_blank" rel="noopener" class="team-wa">Falar com Pedro</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== DEPOIMENTOS ========== -->
-<!-- EDITÁVEL: Substitua por depoimentos REAIS de clientes -->
-<section style="background:var(--bg-card);padding-block:64px;" id="depoimentos">
+<!-- ==================== DEPOIMENTOS ==================== -->
+<section class="sec-alt" style="padding-block:68px;" id="depoimentos">
   <div class="container section-pad">
-    <div style="text-align:center;margin-bottom:40px;">
+    <div class="sec-head">
       <p class="sec-eyebrow">Clientes</p>
       <h2 class="sec-title">O que dizem sobre a gente</h2>
     </div>
     <div class="test-grid">
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <!-- EDITÁVEL: Depoimento real -->
-        <p class="test-quote">"Achei que seguro de carro ia ser uma dor de cabeça. Fizeram tudo pelo WhatsApp em menos de uma hora. Parcela que cabe no bolso."</p>
-        <p class="test-author">— Lucas M.</p>
+        <div class="test-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="test-quote">Achei que seguro de carro ia ser uma dor de cabeça. Fizeram tudo pelo WhatsApp em menos de uma hora. Parcela que cabe no bolso.</p>
+        <p class="test-author">Lucas M. <span>· Sorocaba</span></p>
       </div>
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <!-- EDITÁVEL: Depoimento real -->
-        <p class="test-quote">"Migramos o plano de saúde da empresa e economizamos quase 30%. O atendimento é consultivo de verdade."</p>
-        <p class="test-author">— Fernanda R., empresária</p>
+        <div class="test-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="test-quote">Migramos o plano de saúde da empresa e economizamos quase 30%. O atendimento é consultivo de verdade.</p>
+        <p class="test-author">Fernanda R. <span>· empresária</span></p>
       </div>
       <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <!-- EDITÁVEL: Depoimento real -->
-        <p class="test-quote">"Quando bateram no meu carro, liguei pro corretor e ele resolveu tudo: guincho, vistoria, carro reserva. Sem estresse."</p>
-        <p class="test-author">— Rafael S.</p>
+        <div class="test-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="test-quote">Quando bateram no meu carro, liguei pro corretor e ele resolveu tudo: guincho, vistoria, carro reserva. Sem estresse.</p>
+        <p class="test-author">Rafael S. <span>· Votorantim</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FAQ ========== -->
-<section style="padding-block:64px;" id="faq">
+<!-- ==================== FAQ ==================== -->
+<section style="padding-block:68px;" id="faq">
   <div class="container section-pad">
-    <div style="text-align:center;margin-bottom:40px;">
-      <p class="sec-eyebrow">Perguntas Frequentes</p>
+    <div class="sec-head">
+      <p class="sec-eyebrow">Perguntas frequentes</p>
       <h2 class="sec-title">Tire suas dúvidas</h2>
     </div>
-    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px;">
+    <div class="faq-wrap">
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" type="button">
           Quanto tempo demora pra receber a cotação?
-          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Na maioria dos casos, até 30 minutos via WhatsApp. Plano de saúde empresarial pode levar até 24h porque exige análise de perfil do grupo.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Na maioria dos casos, até 30 minutos via WhatsApp. Plano de saúde empresarial pode levar até 24h porque exige análise do perfil do grupo.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" type="button">
           Preciso ir na corretora pessoalmente?
-          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-a"><div class="faq-a-inner">Não. Tudo pode ser resolvido pelo WhatsApp, telefone ou videochamada. Se preferir atendimento presencial, também temos essa opção.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" type="button">
           E se eu precisar usar o seguro?
-          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Você liga pra gente a qualquer hora. Cuidamos de tudo: acionamos a seguradora, acompanhamos vistoria, guincho e documentação até resolver.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Você liga pra gente a qualquer hora. Cuidamos de tudo: acionamos a seguradora e acompanhamos vistoria, guincho e documentação até resolver.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" type="button">
           Com quais seguradoras vocês trabalham?
-          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-a"><div class="faq-a-inner">Cotamos em mais de 15 seguradoras. Isso garante que a gente encontre a melhor opção pro seu perfil e pro seu bolso.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" type="button">
           Quantas pessoas preciso pra um plano de saúde PME?
-          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-a"><div class="faq-a-inner">A partir de 2 vidas (titulares + dependentes) com CNPJ ativo. MEI também conta. Grupos a partir de 5 vidas costumam ter condições melhores.</div></div>
       </div>
@@ -606,90 +990,156 @@ h1, h2, h3, h4, h5 { font-family: var(--display-font); color: var(--fg); }
   </div>
 </section>
 
-<!-- ========== CTA FINAL ========== -->
-<section style="background:linear-gradient(165deg,var(--hero-bg),var(--hero-bg-mid));padding-block:64px;">
-  <div class="container section-pad" style="text-align:center;">
-    <h2 style="font-family:var(--display-font);font-weight:800;font-size:clamp(1.5rem,4vw,2.25rem);color:var(--hero-fg);margin:0 0 12px;text-wrap:balance;">Pronto pra proteger o que importa?</h2>
-    <p style="color:var(--hero-fg-muted);opacity:.85;font-size:1rem;margin:0 0 28px;max-width:480px;margin-inline:auto;">Fale com um corretor agora. Sem robô, sem espera.</p>
-    <a href="https://wa.me/5515991157175?text=Ol%C3%A1!%20Quero%20cotar%20meu%20seguro%20com%20a%20Ap%C3%B3lice%20Seg." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--green-wa);color:#fff;text-decoration:none;padding:16px 36px;border-radius:14px;font-family:var(--display-font);font-weight:700;font-size:1.125rem;transition:background .2s;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.857L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.22-1.442l-.374-.222-3.878 1.014 1.035-3.782-.244-.387A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/></svg>
-      Falar no WhatsApp
+<!-- ==================== CTA FINAL ==================== -->
+<section class="cta-final" style="padding-block:72px;">
+  <div class="container section-pad" style="text-align:center;position:relative;">
+    <h2>Pronto pra proteger o que importa?</h2>
+    <p>Fale com um corretor agora. Sem robô, sem espera.</p>
+    <a href="https://wa.me/5515991157175?text=Ol%C3%A1!%20Quero%20cotar%20meu%20seguro%20com%20a%20Ap%C3%B3lice%20Seg." target="_blank" rel="noopener" class="btn-cta-light">
+      Falar com um corretor
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
+    <a href="tel:+5515991157175" class="cta-phone">ou ligue: <strong>(15) 99115-7175</strong></a>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- ==================== FOOTER ==================== -->
 <footer class="site-footer">
-  <div class="container section-pad" style="padding-block:40px;">
-    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;margin-bottom:28px;">
-      <div style="min-width:200px;">
-        <p style="font-family:var(--display-font);font-weight:800;font-size:1.125rem;color:var(--footer-fg);margin:0 0 8px;">Apólice Seg</p>
-        <p style="font-size:.8125rem;color:var(--footer-fg-muted);line-height:1.6;margin:0;">Corretora de Seguros<br>Atendimento em todo o Brasil</p>
-      </div>
-      <div style="min-width:140px;">
-        <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--footer-fg-muted);margin:0 0 10px;">Produtos</p>
-        <p style="font-size:.8125rem;color:var(--footer-fg);line-height:2;margin:0;opacity:.7;">Seguro de Automóvel<br>Plano de Saúde<br>Residencial<br>Vida e Empresarial</p>
-      </div>
-      <div style="min-width:180px;">
-        <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--footer-fg-muted);margin:0 0 10px;">Contato</p>
-        <!-- EDITÁVEL: Altere telefone e e-mail quando confirmar -->
-        <p style="font-size:.8125rem;color:var(--footer-fg);line-height:2;margin:0;opacity:.7;">
-          WhatsApp: (15) 99115-7175<br>
-          E-mail: contato@apoliceseg.com.br
+  <div class="container section-pad" style="padding-block:48px 28px;">
+    <div class="footer-grid">
+      <div>
+        <!-- LOGO DO RODAPE (fundo marinho) — versao branca.
+             Arquivo:  logo-apolice-seg-branco.png -->
+        <a href="#inicio" class="brand-lockup" aria-label="Apólice Seg">
+          <img src="logo-apolice-seg-branco.png" alt="Apólice Seg" class="brand-logo"
+               width="550" height="200"
+               onerror="this.hidden=true;document.getElementById('bf2').hidden=false">
+          <div id="bf2" hidden>
+            <span class="brand-text">Apólice <span class="accent">Seg</span></span>
+            <span class="brand-tagline">Seguros &amp; Planos de Saúde</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Seguros &amp; Planos de Saúde</p>
+        <p class="footer-about">
+          Corretora de seguros com atendimento em todo o Brasil.
+          Cotamos nas principais seguradoras do mercado para encontrar
+          a proteção certa pro seu perfil.
         </p>
       </div>
+
+      <div class="footer-col">
+        <h5>Produtos</h5>
+        <ul>
+          <li><a href="#produtos">Seguro de Automóvel</a></li>
+          <li><a href="#produtos">Plano de Saúde</a></li>
+          <li><a href="#produtos">Residencial</a></li>
+          <li><a href="#produtos">Vida</a></li>
+          <li><a href="#produtos">Empresarial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#depoimentos">Clientes</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#simulador">Fazer cotação</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5515991157175" target="_blank" rel="noopener">WhatsApp (15) 99115-7175</a></li>
+          <li><a href="tel:+5515991157175">Ligar: (15) 99115-7175</a></li>
+          <li><a href="mailto:contato@apoliceseg.com.br">contato@apoliceseg.com.br</a></li>
+        </ul>
+      </div>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;">
-      <p style="font-size:.75rem;color:var(--footer-fg-muted);margin:0;">© 2026 Apólice Seg · Corretora de Seguros. Todos os direitos reservados.</p>
+
+    <div class="footer-bottom">
+      <p>© 2026 Apólice Seg · Corretora de Seguros. Todos os direitos reservados.</p>
+      <p>Sorocaba / SP · Atendimento em todo o Brasil</p>
     </div>
   </div>
 </footer>
 
-<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+<!-- ==================== WHATSAPP FLUTUANTE ==================== -->
 <a href="https://wa.me/5515991157175?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener" class="wa-float" aria-label="Falar pelo WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.857L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.22-1.442l-.374-.222-3.878 1.014 1.035-3.782-.244-.387A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.857L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.22-1.442l-.374-.222-3.878 1.014 1.035-3.782-.244-.387A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/></svg>
 </a>
 
 <script>
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-}, {passive: true});
+(function () {
+  'use strict';
 
-function enviarSimulacao(e) {
-  e.preventDefault();
-  const produto = document.getElementById('simProduto').value;
-  const nome = document.getElementById('simNome').value.trim();
-  const cidade = document.getElementById('simCidade').value.trim();
-  if (!produto || !nome || !cidade) return;
-  const msg = encodeURIComponent(
-    `Olá! Vim pelo site da Apólice Seg.\n\n` +
-    `📋 *Interesse:* ${produto}\n` +
-    `👤 *Nome:* ${nome}\n` +
-    `📍 *Cidade:* ${cidade}\n\n` +
-    `Gostaria de receber uma cotação.`
-  );
-  window.open(`https://wa.me/5515991157175?text=${msg}`, '_blank', 'noopener');
-}
+  var WA_NUMERO = '5515991157175';
 
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const answer = item.querySelector('.faq-a');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => {
-    el.classList.remove('open');
-    el.querySelector('.faq-a').style.maxHeight = '0';
+  /* ---------- Header com sombra ao rolar ---------- */
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  /* ---------- Menu mobile ---------- */
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+
+  burger.addEventListener('click', function () {
+    var aberto = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    burger.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
   });
-  if (!isOpen) {
-    item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-  }
-}
 
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('open');
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Abrir menu');
+    });
   });
-});
+
+  /* ---------- Simulador → WhatsApp ---------- */
+  document.getElementById('simForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var produto = document.getElementById('simProduto').value;
+    var nome    = document.getElementById('simNome').value.trim();
+    var cidade  = document.getElementById('simCidade').value.trim();
+    if (!produto || !nome || !cidade) return;
+
+    var msg = encodeURIComponent(
+      'Olá! Vim pelo site da Apólice Seg.\n\n' +
+      'Interesse: ' + produto + '\n' +
+      'Nome: ' + nome + '\n' +
+      'Cidade: ' + cidade + '\n\n' +
+      'Gostaria de receber uma cotação.'
+    );
+
+    window.open('https://wa.me/' + WA_NUMERO + '?text=' + msg, '_blank', 'noopener');
+  });
+
+  /* ---------- FAQ acordeão ---------- */
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var resposta = item.querySelector('.faq-a');
+      var estavaAberto = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-a').style.maxHeight = '0';
+      });
+
+      if (!estavaAberto) {
+        item.classList.add('open');
+        resposta.style.maxHeight = resposta.scrollHeight + 'px';
+      }
+    });
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
