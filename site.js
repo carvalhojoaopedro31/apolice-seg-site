@@ -906,4 +906,27 @@
       }
     });
   });
+
+  /* Pedro 3D acena por cima do card dos 4 passos (só no computador). */
+  (function () {
+    var duo = document.querySelector('.duo');
+    if (!duo || !window.matchMedia || !window.matchMedia('(min-width: 1024px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var imgs = duo.querySelectorAll('img');
+    var tocar = function () {
+      duo.classList.remove('tocando');
+      void duo.offsetWidth;
+      duo.classList.add('tocando');
+    };
+    var prontas = 0;
+    var conta = function () { prontas++; if (prontas === imgs.length) setTimeout(tocar, 900); };
+    Array.prototype.forEach.call(imgs, function (im) {
+      if (im.complete && im.naturalWidth) conta(); else { im.addEventListener('load', conta); im.addEventListener('error', function () {}); }
+    });
+    var emCena = false;
+    duo.addEventListener('animationstart', function () { emCena = true; });
+    duo.addEventListener('animationend', function (e) { if (e.animationName === 'duo-sobe') emCena = false; });
+    var card = duo.parentNode;
+    card.addEventListener('mouseenter', function () { if (!emCena && duo.classList.contains('tocando')) tocar(); });
+  })();
 })();
