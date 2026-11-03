@@ -742,7 +742,8 @@ textarea.input { min-height: 88px; padding-block: 12px; resize: vertical; font: 
   .hero-content { padding-bottom: var(--space-16); }
 }
 
-/* Luciana e Pedro 3D sobem por trás do card dos 4 passos, acenam e descem (sem fala).
+/* Pedro 3D sobe por trás do card dos 4 passos, acena e desce (sem fala).
+   A Luciana entra aqui quando o personagem novo dela ficar pronto (img/duo-luciana-*).
    Roda uma vez quando a página abre e de novo ao passar o mouse no card. */
 .duo { display: none; }
 @media (min-width: 1024px) {
