@@ -907,7 +907,7 @@
     });
   });
 
-  /* Luciana e Pedro 3D acenam por cima do card dos 4 passos (só no computador). */
+  /* Pedro 3D acena por cima do card dos 4 passos (só no computador). */
   (function () {
     var duo = document.querySelector('.duo');
     if (!duo || !window.matchMedia || !window.matchMedia('(min-width: 1024px)').matches) return;
